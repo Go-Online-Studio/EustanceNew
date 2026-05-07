@@ -178,6 +178,22 @@
   /* Footer */
   .footer-grid { grid-template-columns: 1fr; gap: 36px; }
 
+  .footer{
+    text-align: center; 
+  }
+  .footer-social{
+    justify-content: center;
+  }
+.footer-brand img{
+  height: 90px;
+}
+  .footer-brand p,.footer-brand img{
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .footer-contact li{
+    justify-content: center;
+  }
   /* Inner pages mobile */
   .form-row { grid-template-columns: 1fr; }
   .services-grid { grid-template-columns: 1fr; }
