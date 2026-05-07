@@ -1,0 +1,270 @@
+/* ============================================================
+   EUSTANCE TECHNOLOGY — WhatsApp Enquiry System CSS
+   File: css/whatsapp-enquiry.css
+   Description: Validation states + Toast notifications only.
+                Does NOT redesign any existing UI element.
+   ============================================================
+
+   Scope:
+   ─ .et-input-error   / .et-input-valid  — field validation
+   ─ .et-error-message                    — inline error text
+   ─ #et-toast-container  .et-toast…      — toast system
+   ─ .et-btn-loading   .et-btn-spinner    — submit button state
+   ============================================================ */
+
+/* ────────────────────────────────────────────────────────────
+   1. VALIDATION STATES
+   Applied to <input>, <textarea>, <select> elements
+──────────────────────────────────────────────────────────── */
+
+/* Error state */
+.et-input-error {
+  border-color: #ef4444 !important;
+  box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.18) !important;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Valid state */
+.et-input-valid {
+  border-color: #22c55e !important;
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.14) !important;
+  outline: none;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Inline error message text */
+.et-error-message {
+  display: block;
+  margin-top: 5px;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: #f87171;
+  letter-spacing: 0.01em;
+  line-height: 1.4;
+
+  /* Smooth slide-in */
+  animation: et-errIn 0.18s ease forwards;
+}
+
+@keyframes et-errIn {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ────────────────────────────────────────────────────────────
+   2. SUBMIT BUTTON LOADING STATE
+──────────────────────────────────────────────────────────── */
+
+/* Loading state container */
+.et-btn-loading {
+  position: relative;
+  cursor: not-allowed !important;
+  opacity: 0.85;
+  pointer-events: none;
+  display: inline-flex !important;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Spinner element */
+.et-btn-spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: et-spin 0.7s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes et-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ────────────────────────────────────────────────────────────
+   3. TOAST NOTIFICATION SYSTEM
+──────────────────────────────────────────────────────────── */
+
+/* Toast container — fixed bottom-right */
+#et-toast-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 99999;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+  pointer-events: none;
+}
+
+/* Base toast card */
+.et-toast {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+  min-width: 280px;
+  max-width: 360px;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+
+  /* Glassmorphism card — matches site's dark navy theme */
+  background: rgba(10, 22, 48, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.45),
+    0 2px 8px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.06);
+
+  font-family: inherit;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #e2e8f0;
+  line-height: 1.45;
+
+  pointer-events: all;
+  cursor: default;
+  user-select: none;
+
+  /* Start hidden — slide up from below */
+  opacity: 0;
+  transform: translateY(16px) scale(0.96);
+  transition:
+    opacity 0.28s cubic-bezier(0.34, 1.56, 0.64, 1),
+    transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Active (visible) state */
+.et-toast--active {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* Exit (hiding) state */
+.et-toast--exit {
+  opacity: 0;
+  transform: translateY(8px) scale(0.95);
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+  pointer-events: none;
+}
+
+/* ── Toast Icon ── */
+.et-toast__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  margin-top: 1px;
+}
+
+.et-toast__icon svg {
+  width: 18px;
+  height: 18px;
+}
+
+/* ── Toast Message text ── */
+.et-toast__message {
+  flex: 1;
+  padding-top: 1px;
+}
+
+/* ── Close Button ── */
+.et-toast__close {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  padding: 0;
+  margin-left: 4px;
+  margin-top: 1px;
+
+  background: transparent;
+  border: none;
+  border-radius: 6px;
+  color: rgba(255, 255, 255, 0.4);
+  cursor: pointer;
+  transition: color 0.15s ease, background 0.15s ease;
+}
+
+.et-toast__close:hover {
+  color: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.et-toast__close:focus-visible {
+  outline: 2px solid rgba(50, 136, 217, 0.7);
+  outline-offset: 2px;
+}
+
+.et-toast__close svg {
+  width: 14px;
+  height: 14px;
+}
+
+/* ── Toast Type Variants ── */
+
+/* Success — green left border + icon */
+.et-toast--success {
+  border-left: 3px solid #22c55e;
+}
+.et-toast--success .et-toast__icon {
+  color: #4ade80;
+}
+
+/* Error — red left border + icon */
+.et-toast--error {
+  border-left: 3px solid #ef4444;
+}
+.et-toast--error .et-toast__icon {
+  color: #f87171;
+}
+
+/* Warning — amber left border + icon */
+.et-toast--warning {
+  border-left: 3px solid #f59e0b;
+}
+.et-toast--warning .et-toast__icon {
+  color: #fbbf24;
+}
+
+/* Info — blue left border + icon (matches site's accent #3288d9) */
+.et-toast--info {
+  border-left: 3px solid #3288d9;
+}
+.et-toast--info .et-toast__icon {
+  color: #60a5fa;
+}
+
+/* ────────────────────────────────────────────────────────────
+   4. RESPONSIVE ADJUSTMENTS
+──────────────────────────────────────────────────────────── */
+
+@media (max-width: 480px) {
+  #et-toast-container {
+    bottom: 16px;
+    right: 12px;
+    left: 12px;
+    align-items: stretch;
+  }
+
+  .et-toast {
+    min-width: unset;
+    max-width: 100%;
+  }
+}
