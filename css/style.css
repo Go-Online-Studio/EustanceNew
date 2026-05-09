@@ -242,7 +242,7 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   justify-content: space-between;
 }
 
-.navbar-logo img { height: 58px; width: auto; }
+.navbar-logo img { height: 50px; width: auto; }
 
 .navbar-menu {
   display: flex;
@@ -270,6 +270,18 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
   transition: var(--transition);
 }
 
+.homePage .navbar-menu a:hover,
+.homePage .navbar-menu a.active { color: var(--black); } 
+.homePage.scrolled .navbar-menu a:hover,
+.homePage.scrolled .navbar-menu a.active { color: #fff; } 
+
+.homePage .navbar-menu a {
+    color: var(--black);
+}
+.homePage.scrolled .navbar-menu a {
+    color: rgba(255, 255, 255, .75);
+}
+
 .navbar-menu a:hover,
 .navbar-menu a.active { color: #fff; }
 .navbar-menu a:hover::after,
@@ -294,6 +306,10 @@ button { border: none; background: none; cursor: pointer; font-family: inherit; 
 .navbar-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
 .navbar-toggle.active span:nth-child(2) { opacity: 0; }
 .navbar-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+section{
+  overflow: hidden;
+}
 
 /* ---------- HERO SECTION ---------- */
 .hero {

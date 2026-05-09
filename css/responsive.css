@@ -112,6 +112,12 @@
     display: block;
     transform: none;
   }
+.homePage .navbar-menu a {
+    color: rgba(255, 255, 255, .75); 
+}
+  .homePage .navbar-menu a:hover, .homePage .navbar-menu a.active{
+    color: #ffffff;
+}
 
   .nav-dropdown a { padding: 8px 16px; font-size: 13px; }
 
@@ -185,7 +191,7 @@
     justify-content: center;
   }
 .footer-brand img{
-  height: 90px;
+  height: 60px;
 }
   .footer-brand p,.footer-brand img{
     margin-left: auto;
