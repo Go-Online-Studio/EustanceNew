@@ -643,91 +643,106 @@
   </footer>
 
   <!-- GSAP & ScrollTrigger -->
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.1/dist/ScrollTrigger.min.js"></script>
   <script>
-    gsap.registerPlugin(ScrollTrigger);
+    function loadScript(src) {
+      return new Promise((resolve, reject) => {
+        const script = document.createElement('script');
+        script.src = src;
+        script.onload = resolve;
+        script.onerror = reject;
+        document.head.appendChild(script);
+      });
+    }
 
-    const hero         = document.getElementById('hero');
-    const productLight = document.getElementById('productLight');
-    const productDark  = document.getElementById('productDark');
-    const diveOverlay  = document.getElementById('diveOverlay');
+    Promise.all([
+      loadScript('https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js'),
+      loadScript('https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js'),
+    ])
+    .then(() => {
+      gsap.registerPlugin(ScrollTrigger);
+    })
+    .then(() => {
+      const hero         = document.getElementById('hero');
+      const productLight = document.getElementById('productLight');
+      const productDark  = document.getElementById('productDark');
+      const diveOverlay  = document.getElementById('diveOverlay');
 
-    const mm = gsap.matchMedia();
+      const mm = gsap.matchMedia();
 
-    // DESKTOP (≥ 769px)
-    mm.add("(min-width: 769px)", () => {
+      // DESKTOP (≥ 769px)
+      mm.add("(min-width: 769px)", () => {
 
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: hero,
-          start: "top top",      
-          end:   "+=150%",       
-          scrub: 1,              
-          pin:   true,           
-          anticipatePin: 1,      
-        }
+        const tl = gsap.timeline({
+          scrollTrigger: {
+            trigger: hero,
+            start: "top top",      
+            end:   "+=150%",       
+            scrub: 1,              
+            pin:   true,           
+            anticipatePin: 1,      
+          }
+        });
+
+        // 1. Background Pan
+        tl.to('.layer-bg', {
+          backgroundPosition: "50% 100%", 
+          ease: "none",
+          duration: 1.5,
+        }, 0);
+
+        // 2. The Dive — overlay darkens the background
+        tl.to(diveOverlay, {
+          opacity: 0.85,
+          ease: "none",       
+          duration: 1,
+        }, 0);                
+
+        // 3. Product — Light fades out
+        tl.to(productLight, {
+          opacity: 0.4,
+          ease: "none",
+          duration: 0.8, 
+        }, 0);
+
+        // 4. Product — Dark fades in
+        tl.to(productDark, {
+          opacity: 1,
+          ease: "none",
+          duration: 0.55,
+        }, 0.04);  
+
+
+        return () => {
+          tl.kill();
+          ScrollTrigger.getAll().forEach(t => t.kill());
+        };
       });
 
-      // 1. Background Pan
-      tl.to('.layer-bg', {
-        backgroundPosition: "50% 100%", 
-        ease: "none",
-        duration: 1.5,
-      }, 0);
+      // MOBILE (≤ 768px)
+      mm.add("(max-width: 768px)", () => {
+        gsap.set(productLight, { opacity: 0 });
+        gsap.set(productDark,  { opacity: 1 });
+        gsap.set(diveOverlay,  { opacity: 0.4 });    
+        
+        // Scrub the background from top to bottom as the user scrolls on mobile
+        const bgScrub = gsap.to('.layer-bg', {
+          backgroundPosition: "50% 100%",
+          ease: "none",
+          scrollTrigger: {
+            trigger: hero,
+            start: "top top",
+            end: "bottom top", 
+            scrub: 1
+          }
+        });
 
-      // 2. The Dive — overlay darkens the background
-      tl.to(diveOverlay, {
-        opacity: 0.85,
-        ease: "none",       
-        duration: 1,
-      }, 0);                
-
-      // 3. Product — Light fades out
-      tl.to(productLight, {
-        opacity: 0.4,
-        ease: "none",
-        duration: 0.8, 
-      }, 0);
-
-      // 4. Product — Dark fades in
-      tl.to(productDark, {
-        opacity: 1,
-        ease: "none",
-        duration: 0.55,
-      }, 0.04);  
-
-
-      return () => {
-        tl.kill();
-        ScrollTrigger.getAll().forEach(t => t.kill());
-      };
-    });
-
-    // MOBILE (≤ 768px)
-    mm.add("(max-width: 768px)", () => {
-      gsap.set(productLight, { opacity: 0 });
-      gsap.set(productDark,  { opacity: 1 });
-      gsap.set(diveOverlay,  { opacity: 0.4 });    
-      
-      // Scrub the background from top to bottom as the user scrolls on mobile
-      const bgScrub = gsap.to('.layer-bg', {
-        backgroundPosition: "50% 100%",
-        ease: "none",
-        scrollTrigger: {
-          trigger: hero,
-          start: "top top",
-          end: "bottom top", 
-          scrub: 1
-        }
+        return () => {
+          gsap.set(productLight, { opacity: 1 });
+          gsap.set(productDark,  { opacity: 0 });
+          gsap.set(diveOverlay,  { opacity: 0 });
+          bgScrub.kill(); 
+        };
       });
-
-      return () => {
-        gsap.set(productLight, { opacity: 1 });
-        gsap.set(productDark,  { opacity: 0 });
-        gsap.set(diveOverlay,  { opacity: 0 });
-        bgScrub.kill(); 
-      };
     });
   </script>
 
