@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
   // ---------- Navbar Scroll ----------
   const navbar = document.querySelector(".navbar");
   const handleScroll = () => {
-    if (window.scrollY > 140) {
+    if (window.scrollY > 80) {
       navbar.classList.add("scrolled");
       if (navbar.classList.contains("homePage")) {
         document.querySelector(".homePage .navbar-logo img").src =

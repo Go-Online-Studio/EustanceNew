@@ -108,20 +108,32 @@
   </nav>
 
   <!-- ==================== HERO ==================== -->
-  <section class="hero" id="hero">
-    <div class="hero-bg">
-      <img src="images/hero_underwater_rov.png" alt="Underwater ROV Technology" />
+  <section id="hero">
+    <div class="layer layer-bg" aria-hidden="true"></div>
+    <div class="layer layer-overlay" id="diveOverlay" aria-hidden="true"></div>
+
+    <div class="layer layer-product-light" id="productLight">
+      <img src="images/ROV-SA02_image-removebg-preview.webp" alt="ROV-SA02 surface configuration" draggable="false" />
     </div>
-    <!-- <div class="hero-overlay"></div> -->
-    <!-- <div class="hero-particles"></div> -->
-    <div class="container">
-      <div class="hero-content" data-aos="fade-up" data-aos-delay="200">
-        <h1>
-          Underwater Robotics<br />
-          <span class="accent-line">& Marine Technology</span>
-        </h1>
-        <p>Advanced marine systems engineered for exploration, mobility & underwater innovation.</p>
-        <div class="hero-buttons">
+
+    <div class="layer layer-product-dark" id="productDark">
+      <img src="images/UnderwaterROVBanner-removebg-preview.webp" alt="ROV-SA02 dive configuration" draggable="false" />
+    </div>
+
+    <div class="layer layer-ui" id="heroUI">
+      <div style="flex: 1; display: flex; align-items: flex-end; padding-bottom: clamp(1.5rem, 4vh, 3rem);">
+        <div class="hero-headline">
+          <h1>
+            Underwater Robotics<br />
+            <span class="accent-line" style="color: var(--teal-glow); background: none; -webkit-text-fill-color: var(--teal-glow); display: block;">& Marine Technology</span>
+          </h1>
+        </div>
+      </div>
+      <div class="hero-bottom">
+        <p class="hero-sub">
+          Advanced marine systems engineered for exploration, mobility & underwater innovation.
+        </p>
+        <div class="hero-buttons" style="display: flex; gap: 16px; flex-wrap: wrap; margin-top: 24px; z-index: 10; position: relative; pointer-events: auto;">
           <a href="#products" class="btn-primary">
             Explore Products
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
@@ -132,9 +144,6 @@
           </a>
           <a href="projects.html" class="btn-outline">Current Projects</a>
         </div>
-      </div>
-      <div class="hero-visual" data-aos="fade-left" data-aos-delay="500">
-        <img src="images/UnderwaterROVBanner.webp" alt="Marine ROV System" />
       </div>
     </div>
   </section>
@@ -632,6 +641,96 @@
       </div>
     </div>
   </footer>
+
+  <!-- GSAP & ScrollTrigger -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script>
+    gsap.registerPlugin(ScrollTrigger);
+
+    const hero         = document.getElementById('hero');
+    const productLight = document.getElementById('productLight');
+    const productDark  = document.getElementById('productDark');
+    const diveOverlay  = document.getElementById('diveOverlay');
+
+    const mm = gsap.matchMedia();
+
+    // DESKTOP (≥ 769px)
+    mm.add("(min-width: 769px)", () => {
+
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: hero,
+          start: "top top",      
+          end:   "+=150%",       
+          scrub: 1,              
+          pin:   true,           
+          anticipatePin: 1,      
+        }
+      });
+
+      // 1. Background Pan
+      tl.to('.layer-bg', {
+        backgroundPosition: "50% 100%", 
+        ease: "none",
+        duration: 1.5,
+      }, 0);
+
+      // 2. The Dive — overlay darkens the background
+      tl.to(diveOverlay, {
+        opacity: 0.85,
+        ease: "none",       
+        duration: 1,
+      }, 0);                
+
+      // 3. Product — Light fades out
+      tl.to(productLight, {
+        opacity: 0.4,
+        ease: "none",
+        duration: 0.8, 
+      }, 0);
+
+      // 4. Product — Dark fades in
+      tl.to(productDark, {
+        opacity: 1,
+        ease: "none",
+        duration: 0.55,
+      }, 0.04);  
+
+
+      return () => {
+        tl.kill();
+        ScrollTrigger.getAll().forEach(t => t.kill());
+      };
+    });
+
+    // MOBILE (≤ 768px)
+    mm.add("(max-width: 768px)", () => {
+      gsap.set(productLight, { opacity: 0 });
+      gsap.set(productDark,  { opacity: 1 });
+      gsap.set(diveOverlay,  { opacity: 0.4 });    
+      
+      // Scrub the background from top to bottom as the user scrolls on mobile
+      const bgScrub = gsap.to('.layer-bg', {
+        backgroundPosition: "50% 100%",
+        ease: "none",
+        scrollTrigger: {
+          trigger: hero,
+          start: "top top",
+          end: "bottom top", 
+          scrub: 1
+        }
+      });
+
+      return () => {
+        gsap.set(productLight, { opacity: 1 });
+        gsap.set(productDark,  { opacity: 0 });
+        gsap.set(diveOverlay,  { opacity: 0 });
+        bgScrub.kill(); 
+      };
+    });
+  </script>
+
 
   <!-- AOS JS -->
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
