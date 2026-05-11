@@ -381,7 +381,7 @@ section{
   transform: translateY(18%);
   will-change: opacity, transform;
   animation: floatBoing 4s ease-in-out infinite;
-  margin-bottom: 60px;
+  margin-bottom: 82px;
 }
 
 @keyframes floatBoing {
