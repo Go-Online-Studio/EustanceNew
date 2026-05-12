@@ -27,7 +27,7 @@
   ──────────────────────────────────────────────────────────── */
   const CONFIG = {
     /** WhatsApp business phone number — country code + number, no spaces or + */
-    PHONE: '916354710794', 
+    PHONE: '919998094801', 
 
     /** Company display name used in messages */
     COMPANY: 'Eustance Technology',
