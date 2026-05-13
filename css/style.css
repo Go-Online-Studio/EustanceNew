@@ -809,6 +809,15 @@ section{
   line-height: 1.7;
   max-width: 300px;
 }
+.footerHead{
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+  color: var(--text-primary);
+}
 
 .footer-col h4 {
   font-size: 14px;
@@ -828,7 +837,7 @@ section{
 }
 
 .footer-col ul li a:hover { color: var(--accentColour); }
-
+  
 .footer-contact li {
   display: flex;
   align-items: flex-start;
