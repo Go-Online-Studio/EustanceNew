@@ -1,327 +1,311 @@
 <!DOCTYPE html>
 
 <html lang="en">
-
 <head>
-    <meta charset="utf-8" />
-    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-    <title>Current Projects — Eustance Technology</title>
-    <meta
-        content="Explore Eustance Technology's active development projects including electric boats, robot fish, river crossing vehicles, rescue tubes, and marine ROV systems."
-        name="description" />
-    <meta content="index, follow" name="robots" />
-    <link href="images/Fevicon.png" rel="icon" type="image/png" />
-    <!-- Preload images -->
-    <link as="image" fetchpriority="high" href="images/EustanceLogoWhite.svg" rel="preload" type="image/svg+xml" />
-    <link as="image" fetchpriority="high" href="images/project_rov_system.png" rel="preload" type="image/png" />
-    <link as="image" fetchpriority="high" href="images/project_electric_boat.webp" rel="preload" type="image/png" />
-    <link as="image" fetchpriority="high" href="images/project_robot_fish.webp" rel="preload" type="image/png" />
-    <link href="https://fonts.googleapis.com" rel="preconnect">
-    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
-    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/responsive.css" rel="stylesheet" />
-    <link href="css/whatsapp-enquiry.css" rel="stylesheet" />
-    </link>
-    </link>
-    </link>
-    </link>
-    <link as="style"
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap"
-        rel="preload" />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap"
-        rel="stylesheet" />
-    <link href="https://eustance.com/projects.html" rel="canonical" />
-    <meta content="summary_large_image" name="twitter:card" />
-    <meta content="Current Projects — Eustance Technology" name="twitter:title" />
-    <meta
-        content="Explore Eustance Technology's active development projects including electric boats, robot fish, river crossing vehicles, rescue tubes, and marine ROV systems."
-        name="twitter:description" />
-    <meta content="https://eustance.com/images/hero_underwater_rov.webp" name="twitter:image" />
-    <meta content="https://eustance.com/projects.html" property="og:url" />
-    <meta content="Current Projects — Eustance Technology" property="og:title" />
-    <meta
-        content="Explore Eustance Technology's active development projects including electric boats, robot fish, river crossing vehicles, rescue tubes, and marine ROV systems."
-        property="og:description" />
-    <meta content="website" property="og:type" />
-    <meta content="https://eustance.com/images/hero_underwater_rov.webp" property="og:image" />
-</head>
-
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Current Projects — Eustance Technology</title>
+<meta content="Explore Eustance Technology's active development projects including electric boats, robot fish, river crossing vehicles, rescue tubes, and marine ROV systems." name="description"/>
+<meta content="index, follow" name="robots"/>
+<link href="images/Fevicon.png" rel="icon" type="image/png"/>
+<!-- Preload images -->
+<link as="image" fetchpriority="high" href="images/EustanceLogoWhite.svg" rel="preload" type="image/svg+xml"/>
+<link as="image" fetchpriority="high" href="images/project_rov_system.png" rel="preload" type="image/png"/>
+<link as="image" fetchpriority="high" href="images/project_electric_boat.webp" rel="preload" type="image/png"/>
+<link as="image" fetchpriority="high" href="images/project_robot_fish.webp" rel="preload" type="image/png"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet"/>
+<link href="css/style.css" rel="stylesheet"/>
+<link href="css/responsive.css" rel="stylesheet"/>
+<link href="css/whatsapp-enquiry.css" rel="stylesheet"/>
+<link as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="preload"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://eustance.com/projects.html" rel="canonical"/>
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="Current Projects — Eustance Technology" name="twitter:title"/>
+<meta content="Explore Eustance Technology's active development projects including electric boats, robot fish, river crossing vehicles, rescue tubes, and marine ROV systems." name="twitter:description"/>
+<meta content="https://eustance.com/images/hero_underwater_rov.webp" name="twitter:image"/>
+<meta content="https://eustance.com/projects.html" property="og:url"/>
+<meta content="Current Projects — Eustance Technology" property="og:title"/>
+<meta content="Explore Eustance Technology's active development projects including electric boats, robot fish, river crossing vehicles, rescue tubes, and marine ROV systems." property="og:description"/>
+<meta content="website" property="og:type"/>
+<meta content="https://eustance.com/images/hero_underwater_rov.webp" property="og:image"/>
+<style id="preloader-css">/* Preloader Critical CSS */
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #010531;
+  z-index: 999999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.4s ease, visibility 0.4s;
+  opacity: 1;
+  visibility: visible;
+}
+#preloader.loaded {
+  opacity: 0;
+  visibility: hidden;
+}
+body.preloader-active {
+  overflow: hidden !important;
+}
+.loader {
+  width: 50px;
+  height: 50px;
+  border: 5px solid rgba(27, 111, 196, 0.2);
+  border-top-color: #1b6fc4;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}</style></head>
 <body>
-    <!-- NAVBAR -->
-    <nav class="navbar scrolled" id="navbar">
-        <div class="container">
-            <a class="navbar-logo" href="index.html"><img alt="Eustance Technology" height="50"
-                    src="images/EustanceLogoWhite.svg" width="200" /></a>
-            <div class="navbar-menu" id="navMenu">
-                <a href="index.html">Home</a>
-                <div class="nav-item">
-                    <a href="#">Products <svg class="chevron" fill="none" stroke="currentColor" stroke-linecap="round"
-                            stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24">
-                            <polyline points="6 9 12 15 18 9"></polyline>
-                        </svg></a>
-                    <div class="nav-dropdown">
-                        <a href="products-underwater-robotics-accessories.html">
-                            <svg class="drop-icon" height="24" style="enable-background:new 0 0 512 512" version="1.1"
-                            viewbox="0 0 465.502 465.502" width="24" x="0" xml:space="preserve"
-                            xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
-                            <g>
-                                <path class=""
-                                    d="M353.502 184.751h-96c-19.306 0-37.509 4.958-53.408 13.652v-.098l-90.958 49.346-8.34-25.019a32 32 0 0 0-30.358-21.881h-48.93c-5.46 0-9.317 5.35-7.589 10.53l23.156 69.47h88.426v16H16c-8.8 0-16 7.2-16 16s7.2 16 16 16h19.742l-17.823 53.47c-1.727 5.181 2.129 10.53 7.589 10.53h48.93a32 32 0 0 0 30.358-21.881l8.34-25.019 90.958 49.346v-.098c15.899 8.695 34.102 13.652 53.408 13.652h96c61.6 0 112-50.4 112-112 0-61.601-50.4-112-112-112zm-132 136c-13.255 0-24-10.745-24-24s10.745-24 24-24 24 10.745 24 24-10.745 24-24 24zm84 0c-13.255 0-24-10.745-24-24s10.745-24 24-24 24 10.745 24 24-10.745 24-24 24zm84 0c-13.255 0-24-10.745-24-24s10.745-24 24-24 24 10.745 24 24-10.745 24-24 24zM369.446 56.751c-8.806 0-15.944 7.138-15.944 15.943l-16 .057c-26.469 0-48 21.531-48 48v16h-32v32h96v-32h-32v-16c0-8.82 7.172-16 16-16h16c0 8.82 7.15 16 15.97 16h16.03v-64h-16.056z"
-                                    data-original="#000000" fill="currentColor" opacity="1"></path>
-                            </g>
-                            </svg>
+<div aria-hidden="true" id="preloader"><div class="loader"></div></div>
+<script id="preloader-js">(function() {
+    document.body.classList.add('preloader-active');
+    function hidePreloader() {
+      var preloader = document.getElementById('preloader');
+      if (preloader) {
+        preloader.classList.add('loaded');
+        setTimeout(function() {
+          preloader.style.display = 'none';
+          document.body.classList.remove('preloader-active');
+        }, 400);
+      }
+    }
+    if (document.readyState === 'complete') {
+      hidePreloader();
+    } else {
+      window.addEventListener('load', hidePreloader);
+    }
+  })();</script>
+<!-- NAVBAR -->
+<nav class="navbar scrolled" id="navbar">
+<div class="container">
+<a class="navbar-logo" href="index.html"><img alt="Eustance Technology" height="50" src="images/EustanceLogoWhite.svg" width="200"/></a>
+<div class="navbar-menu" id="navMenu">
+<a href="index.html">Home</a>
+<div class="nav-item">
+<a href="#">Products <svg class="chevron" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" viewbox="0 0 24 24">
+<polyline points="6 9 12 15 18 9"></polyline>
+</svg></a>
+<div class="nav-dropdown">
+<a href="products-underwater-robotics-accessories.html">
+<svg class="drop-icon" height="24" style="enable-background:new 0 0 512 512" version="1.1" viewbox="0 0 465.502 465.502" width="24" x="0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+<g>
+<path class="" d="M353.502 184.751h-96c-19.306 0-37.509 4.958-53.408 13.652v-.098l-90.958 49.346-8.34-25.019a32 32 0 0 0-30.358-21.881h-48.93c-5.46 0-9.317 5.35-7.589 10.53l23.156 69.47h88.426v16H16c-8.8 0-16 7.2-16 16s7.2 16 16 16h19.742l-17.823 53.47c-1.727 5.181 2.129 10.53 7.589 10.53h48.93a32 32 0 0 0 30.358-21.881l8.34-25.019 90.958 49.346v-.098c15.899 8.695 34.102 13.652 53.408 13.652h96c61.6 0 112-50.4 112-112 0-61.601-50.4-112-112-112zm-132 136c-13.255 0-24-10.745-24-24s10.745-24 24-24 24 10.745 24 24-10.745 24-24 24zm84 0c-13.255 0-24-10.745-24-24s10.745-24 24-24 24 10.745 24 24-10.745 24-24 24zm84 0c-13.255 0-24-10.745-24-24s10.745-24 24-24 24 10.745 24 24-10.745 24-24 24zM369.446 56.751c-8.806 0-15.944 7.138-15.944 15.943l-16 .057c-26.469 0-48 21.531-48 48v16h-32v32h96v-32h-32v-16c0-8.82 7.172-16 16-16h16c0 8.82 7.15 16 15.97 16h16.03v-64h-16.056z" data-original="#000000" fill="currentColor" opacity="1"></path>
+</g>
+</svg>
                             Underwater Robotics Accessories
                         </a>
-                        <a href="products-marine-propulsion.html"><svg class="drop-icon" height="24"
-                            style="enable-background:new 0 0 512 512" version="1.1" viewbox="0 0 511.999 511.999"
-                            width="24" x="0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
-                            xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
-                            <g>
-                                <circle class="" cx="273.975" cy="271.104" data-original="#000000" fill="currentColor"
-                                    opacity="1" r="76.728"></circle>
-                                <path class=""
-                                    d="M208.953 52.316c-35.42 55.239-24.036 104.905-7.512 136.005 19.387-17.006 44.773-27.333 72.528-27.333 25.922 0 49.774 9.008 68.607 24.051 32.464-29.121 80.316-27.977 98.037-76.217 25.172-68.521-157.056-172.854-231.66-56.506zM495.957 324.196c-30.111-58.26-78.776-73.25-113.966-74.506a110.261 110.261 0 0 1 2.097 21.416c0 46.524-29.001 86.4-69.875 102.504 8.954 42.655-15.925 83.507 16.977 122.957 46.757 56.059 228.226-49.588 164.767-172.371zM163.852 271.107c0-5.572.42-11.048 1.222-16.401-41.415-13.574-64.354-55.544-114.969-46.775C-21.822 220.394-21.063 430.375 117 436.808c65.509 3.053 102.824-31.595 121.505-61.443-43.372-14.794-74.653-55.941-74.653-104.258z"
-                                    data-original="#000000" fill="currentColor" opacity="1"></path>
-                            </g>
-                            </svg>Marine Propulsion
+<a href="products-marine-propulsion.html"><svg class="drop-icon" height="24" style="enable-background:new 0 0 512 512" version="1.1" viewbox="0 0 511.999 511.999" width="24" x="0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+<g>
+<circle class="" cx="273.975" cy="271.104" data-original="#000000" fill="currentColor" opacity="1" r="76.728"></circle>
+<path class="" d="M208.953 52.316c-35.42 55.239-24.036 104.905-7.512 136.005 19.387-17.006 44.773-27.333 72.528-27.333 25.922 0 49.774 9.008 68.607 24.051 32.464-29.121 80.316-27.977 98.037-76.217 25.172-68.521-157.056-172.854-231.66-56.506zM495.957 324.196c-30.111-58.26-78.776-73.25-113.966-74.506a110.261 110.261 0 0 1 2.097 21.416c0 46.524-29.001 86.4-69.875 102.504 8.954 42.655-15.925 83.507 16.977 122.957 46.757 56.059 228.226-49.588 164.767-172.371zM163.852 271.107c0-5.572.42-11.048 1.222-16.401-41.415-13.574-64.354-55.544-114.969-46.775C-21.822 220.394-21.063 430.375 117 436.808c65.509 3.053 102.824-31.595 121.505-61.443-43.372-14.794-74.653-55.941-74.653-104.258z" data-original="#000000" fill="currentColor" opacity="1"></path>
+</g>
+</svg>Marine Propulsion
                         </a>
-                        <a href="products-electric-water-mobility.html"><svg class="drop-icon" height="24"
-                            style="enable-background:new 0 0 512 512" version="1.1" viewbox="0 0 64 64" width="24"
-                            x="0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
-                            xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
-                            <g>
-                                <path
-                                    d="M22 46a1 1 0 0 0 2 0v-1h-2zM12 35c0-2.317 2.523-4 6-4h2v-4h-5a13.787 13.787 0 0 0-7.295 2.465C5.35 31.068 4 33.085 4 35c0 4.416 6.656 8 11 8h5v-4h-2c-3.477 0-6-1.683-6-4zm-2 1H6v-2h4z"
-                                    data-original="#000000" fill="currentColor" opacity="1"></path>
-                                <path d="M14 35c0 .983 1.5 2 4 2h4a2 2 0 0 0 0-4h-4c-2.5 0-4 1.017-4 2z"
-                                    data-original="#000000" fill="currentColor" opacity="1"></path>
-                                <path
-                                    d="M22 31a4 4 0 0 1 0 8v4h14V27H22zm6-2h6v2h-6zM33 19h-1.829A3.016 3.016 0 0 0 33 20.829zM43.707 26.707A1 1 0 0 1 43 27h-5v2h7v2h-7v3h12v2H38v3h7v2h-7v2h5a1 1 0 0 1 .707.293l5 5A8.625 8.625 0 0 0 54 50.942V19.058a8.625 8.625 0 0 0-5.293 2.649zM56 19h4v32h-4zM34 13H23a7.008 7.008 0 0 0-7 7v5h4v-5a3 3 0 0 1 3-3h11a2 2 0 0 0 0-4z"
-                                    data-original="#000000" fill="currentColor" opacity="1"></path>
-                            </g>
-                            </svg>Electric Water Mobility
+<a href="products-electric-water-mobility.html"><svg class="drop-icon" height="24" style="enable-background:new 0 0 512 512" version="1.1" viewbox="0 0 64 64" width="24" x="0" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" y="0">
+<g>
+<path d="M22 46a1 1 0 0 0 2 0v-1h-2zM12 35c0-2.317 2.523-4 6-4h2v-4h-5a13.787 13.787 0 0 0-7.295 2.465C5.35 31.068 4 33.085 4 35c0 4.416 6.656 8 11 8h5v-4h-2c-3.477 0-6-1.683-6-4zm-2 1H6v-2h4z" data-original="#000000" fill="currentColor" opacity="1"></path>
+<path d="M14 35c0 .983 1.5 2 4 2h4a2 2 0 0 0 0-4h-4c-2.5 0-4 1.017-4 2z" data-original="#000000" fill="currentColor" opacity="1"></path>
+<path d="M22 31a4 4 0 0 1 0 8v4h14V27H22zm6-2h6v2h-6zM33 19h-1.829A3.016 3.016 0 0 0 33 20.829zM43.707 26.707A1 1 0 0 1 43 27h-5v2h7v2h-7v3h12v2H38v3h7v2h-7v2h5a1 1 0 0 1 .707.293l5 5A8.625 8.625 0 0 0 54 50.942V19.058a8.625 8.625 0 0 0-5.293 2.649zM56 19h4v32h-4zM34 13H23a7.008 7.008 0 0 0-7 7v5h4v-5a3 3 0 0 1 3-3h11a2 2 0 0 0 0-4z" data-original="#000000" fill="currentColor" opacity="1"></path>
+</g>
+</svg>Electric Water Mobility
                         </a>
-                        <div class="drop-divider"></div>
-                        <a href="products-custom-marine-systems.html"><svg class="drop-icon" fill="none"
-                                stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                viewbox="0 0 24 24">
-                                <path
-                                    d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z">
-                                </path>
-                            </svg>Custom Marine Systems</a>
-                    </div>
-                </div>
-                <a class="active" href="projects.html">Projects</a>
-                <a href="about.html">About</a>
-                <a href="contact.html">Contact</a>
-            </div>
-            <button aria-label="Toggle navigation" class="navbar-toggle"
-                id="navToggle"><span></span><span></span><span></span></button>
-        </div>
-    </nav>
-    <main><!-- PAGE BANNER -->
-        <section class="page-banner">
-            <div class="page-banner-bg"><img alt="Projects" height="800" src="images/project_rov_system.png"
-                    width="600" /></div>
-            <div class="page-banner-overlay"></div>
-            <div class="container" data-aos="fade-up">
-                <div class="breadcrumb"><a href="index.html">Home</a><span
-                        class="separator">/</span><span>Projects</span></div>
-                <h1>Current Development<br /><span class="accent-text">Projects</span></h1>
-                <p>Pioneering the future of marine technology through active R&amp;D and advanced engineering projects.
+<div class="drop-divider"></div>
+<a href="products-custom-marine-systems.html"><svg class="drop-icon" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z">
+</path>
+</svg>Custom Marine Systems</a>
+</div>
+</div>
+<a class="active" href="projects.html">Projects</a>
+<a href="about.html">About</a>
+<a href="contact.html">Contact</a>
+</div>
+<button aria-label="Toggle navigation" class="navbar-toggle" id="navToggle"><span></span><span></span><span></span></button>
+</div>
+</nav>
+<main><!-- PAGE BANNER -->
+<section class="page-banner">
+<div class="page-banner-bg"><img alt="Projects" height="800" src="images/project_rov_system.png" width="600"/></div>
+<div class="page-banner-overlay"></div>
+<div class="container" data-aos="fade-up">
+<div class="breadcrumb"><a href="index.html">Home</a><span class="separator">/</span><span>Projects</span></div>
+<h1>Current Development<br/><span class="accent-text">Projects</span></h1>
+<p>Pioneering the future of marine technology through active R&amp;D and advanced engineering projects.
                 </p>
-            </div>
-        </section><!-- PROJECTS GRID -->
-        <section class="section section-dark">
-            <div class="container">
-                <div class="projects-grid mt-0" style="grid-template-columns: repeat(3, 1fr);">
-                    <div class="project-card" data-aos="fade-up" data-aos-delay="100">
-                        <div class="project-card-img"><img alt="Electric Boat" height="800" loading="lazy"
-                                src="images/project_electric_boat.webp" width="600" /></div>
-                        <div class="project-card-overlay"></div>
-                        <div class="project-card-content">
-                            <h3>Electric Boat</h3>
-                            <p>Zero-emission electric marine vessel for sustainable waterway transport. Featuring
+</div>
+</section><!-- PROJECTS GRID -->
+<section class="section section-dark">
+<div class="container">
+<div class="projects-grid mt-0" style="grid-template-columns: repeat(3, 1fr);">
+<div class="project-card" data-aos="fade-up" data-aos-delay="100">
+<div class="project-card-img"><img alt="Electric Boat" height="800" loading="lazy" src="images/project_electric_boat.webp" width="600"/></div>
+<div class="project-card-overlay"></div>
+<div class="project-card-content">
+<h3>Electric Boat</h3>
+<p>Zero-emission electric marine vessel for sustainable waterway transport. Featuring
                                 advanced battery
                                 systems and electric marine propulsion.</p>
-                        </div>
-                        <div class="project-card-glow"></div>
-                    </div>
-                    <div class="project-card" data-aos="fade-up" data-aos-delay="200">
-                        <div class="project-card-img"><img alt="Robot Fish" height="800" loading="lazy"
-                                src="images/project_robot_fish.webp" width="600" /></div>
-                        <div class="project-card-overlay"></div>
-                        <div class="project-card-content">
-                            <h3>Robot Fish</h3>
-                            <p>Biomimetic autonomous underwater vehicle for marine research. Replicates natural fish
+</div>
+<div class="project-card-glow"></div>
+</div>
+<div class="project-card" data-aos="fade-up" data-aos-delay="200">
+<div class="project-card-img"><img alt="Robot Fish" height="800" loading="lazy" src="images/project_robot_fish.webp" width="600"/></div>
+<div class="project-card-overlay"></div>
+<div class="project-card-content">
+<h3>Robot Fish</h3>
+<p>Biomimetic autonomous underwater vehicle for marine research. Replicates natural fish
                                 locomotion for
                                 stealth observation.</p>
-                        </div>
-                        <div class="project-card-glow"></div>
-                    </div>
-                    <div class="project-card" data-aos="fade-up" data-aos-delay="300">
-                        <div class="project-card-img"><img alt="River Crossing Vehicle" height="800" loading="lazy"
-                                src="images/project_river_vehicle.webp" width="600" />
-                        </div>
-                        <div class="project-card-overlay"></div>
-                        <div class="project-card-content">
-                            <h3>River Crossing Vehicle</h3>
-                            <p>Amphibious mobility platform for challenging water crossings. Designed for both civilian
+</div>
+<div class="project-card-glow"></div>
+</div>
+<div class="project-card" data-aos="fade-up" data-aos-delay="300">
+<div class="project-card-img"><img alt="River Crossing Vehicle" height="800" loading="lazy" src="images/project_river_vehicle.webp" width="600"/>
+</div>
+<div class="project-card-overlay"></div>
+<div class="project-card-content">
+<h3>River Crossing Vehicle</h3>
+<p>Amphibious mobility platform for challenging water crossings. Designed for both civilian
                                 and defense
                                 applications.</p>
-                        </div>
-                        <div class="project-card-glow"></div>
-                    </div>
-                    <div class="project-card" data-aos="fade-up" data-aos-delay="400">
-                        <div class="project-card-img"><img alt="Rescue Tube" height="800" loading="lazy"
-                                src="images/project_rescue_tube.webp" width="600" /></div>
-                        <div class="project-card-overlay"></div>
-                        <div class="project-card-content">
-                            <h3>Rescue Tube</h3>
-                            <p>Autonomous water rescue device with electric propulsion system. Rapid deployment for
+</div>
+<div class="project-card-glow"></div>
+</div>
+<div class="project-card" data-aos="fade-up" data-aos-delay="400">
+<div class="project-card-img"><img alt="Rescue Tube" height="800" loading="lazy" src="images/project_rescue_tube.webp" width="600"/></div>
+<div class="project-card-overlay"></div>
+<div class="project-card-content">
+<h3>Rescue Tube</h3>
+<p>Autonomous water rescue device with electric propulsion system. Rapid deployment for
                                 emergency
                                 life-saving operations.</p>
-                        </div>
-                        <div class="project-card-glow"></div>
-                    </div>
-                    <div class="project-card" data-aos="fade-up" data-aos-delay="500">
-                        <div class="project-card-img"><img alt="Marine ROV" height="800" loading="lazy"
-                                src="images/project_rov_system.png" width="600" /></div>
-                        <div class="project-card-overlay"></div>
-                        <div class="project-card-content">
-                            <h3>Marine ROV</h3>
-                            <p>Next-generation remotely operated vehicle for deep-sea operations. Modular design with
+</div>
+<div class="project-card-glow"></div>
+</div>
+<div class="project-card" data-aos="fade-up" data-aos-delay="500">
+<div class="project-card-img"><img alt="Marine ROV" height="800" loading="lazy" src="images/project_rov_system.png" width="600"/></div>
+<div class="project-card-overlay"></div>
+<div class="project-card-content">
+<h3>Marine ROV</h3>
+<p>Next-generation remotely operated vehicle for deep-sea operations. Modular design with
                                 advanced control
                                 systems.</p>
-                        </div>
-                        <div class="project-card-glow"></div>
-                    </div>
-                </div>
-            </div>
-        </section><!-- CTA -->
-        <section class="section section-darker">
-            <div class="container">
-                <div class="category-cta mt-0" data-aos="fade-up">
-                    <h3>Have a Project in Mind?</h3>
-                    <p>We collaborate on custom marine technology projects. Let's engineer the future together.</p>
-                    <a class="btn-primary" href="contact.html">Get in Touch <svg fill="none" height="18"
-                            stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            viewbox="0 0 24 24" width="18">
-                            <path d="M5 12h14"></path>
-                            <path d="m12 5 7 7-7 7"></path>
-                        </svg></a>
-                </div>
-            </div>
-        </section><!-- FOOTER -->
-    </main>
-
-
-
-
-
-
-
-    <footer class="footer" id="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <img alt="Eustance Technology" height="50" loading="lazy" src="images/EustanceLogoWhite.svg"
-                        width="200" />
-                    <p>Developing advanced underwater robotics and marine technology systems for exploration, mobility
+</div>
+<div class="project-card-glow"></div>
+</div>
+</div>
+</div>
+</section><!-- CTA -->
+<section class="section section-darker">
+<div class="container">
+<div class="category-cta mt-0" data-aos="fade-up">
+<h3>Have a Project in Mind?</h3>
+<p>We collaborate on custom marine technology projects. Let's engineer the future together.</p>
+<a class="btn-primary" href="contact.html">Get in Touch <svg fill="none" height="18" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24" width="18">
+<path d="M5 12h14"></path>
+<path d="m12 5 7 7-7 7"></path>
+</svg></a>
+</div>
+</div>
+</section><!-- FOOTER -->
+</main>
+<footer class="footer" id="footer">
+<div class="container">
+<div class="footer-grid">
+<div class="footer-brand">
+<img alt="Eustance Technology" height="50" loading="lazy" src="images/EustanceLogoWhite.svg" width="200"/>
+<p>Developing advanced underwater robotics and marine technology systems for exploration, mobility
                         &amp;
                         innovation.</p>
-                    <div class="footer-social">
-                        <a aria-label="Facebook" href="https://www.facebook.com/" rel="noopener" target="_blank"><svg
-                                fill="currentColor" viewbox="0 0 24 24">
-                                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
-                            </svg></a>
-                        <a aria-label="Instagram" href="https://www.instagram.com/eustancetech/" rel="noopener"
-                            target="_blank"><svg fill="none" stroke="currentColor" stroke-linecap="round"
-                                stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
-                                <rect height="20" rx="5" width="20" x="2" y="2"></rect>
-                                <circle cx="12" cy="12" r="5"></circle>
-                                <circle cx="17.5" cy="6.5" r="1.5"></circle>
-                            </svg></a>
-                        <a aria-label="LinkedIn" href="https://www.linkedin.com/company/eustance-technology/people/"
-                            rel="noopener" target="_blank"><svg fill="currentColor" viewbox="0 0 24 24">
-                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                                <rect height="12" width="4" x="2" y="9"></rect>
-                                <circle cx="4" cy="4" r="2"></circle>
-                            </svg></a>
-                        <a aria-label="WhatsApp" href="https://api.whatsapp.com/send?phone=919998094801" rel="noopener"
-                            target="_blank"><svg fill="currentColor" viewbox="0 0 24 24">
-                                <path
-                                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z">
-                                </path>
-                            </svg></a>
-                    </div>
-                </div>
-                <div class="footer-col">
-                    <h4>Navigate</h4>
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="products-underwater-robotics-accessories.html">Products</a></li>
-                        <li><a href="projects.html">Projects</a></li>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="contact.html">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Products</h4>
-                    <ul>
-                        <li><a href="products-underwater-robotics-accessories.html">Robotics Accessories</a></li>
-                        <li><a href="products-marine-propulsion.html">Marine Propulsion</a></li>
-                        <li><a href="products-electric-water-mobility.html">Electric Water Mobility</a></li>
-                        <li><a href="products-custom-marine-systems.html">Custom Marine Systems</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Contact Us</h4>
-                    <ul class="footer-contact">
-                        <li><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                stroke-width="2" viewbox="0 0 24 24">
-                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                                <circle cx="12" cy="10" r="3"></circle>
-                            </svg><a href="https://maps.app.goo.gl/FPwgWkcQc4uLMn7A6" target="_blank">
-                                <b class="footerHead">Registered Office -</b><br />
+<div class="footer-social">
+<a aria-label="Facebook" href="https://www.facebook.com/" rel="noopener" target="_blank"><svg fill="currentColor" viewbox="0 0 24 24">
+<path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+</svg></a>
+<a aria-label="Instagram" href="https://www.instagram.com/eustancetech/" rel="noopener" target="_blank"><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<rect height="20" rx="5" width="20" x="2" y="2"></rect>
+<circle cx="12" cy="12" r="5"></circle>
+<circle cx="17.5" cy="6.5" r="1.5"></circle>
+</svg></a>
+<a aria-label="LinkedIn" href="https://www.linkedin.com/company/eustance-technology/people/" rel="noopener" target="_blank"><svg fill="currentColor" viewbox="0 0 24 24">
+<path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"></path>
+<rect height="12" width="4" x="2" y="9"></rect>
+<circle cx="4" cy="4" r="2"></circle>
+</svg></a>
+<a aria-label="WhatsApp" href="https://api.whatsapp.com/send?phone=919998094801" rel="noopener" target="_blank"><svg fill="currentColor" viewbox="0 0 24 24">
+<path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z">
+</path>
+</svg></a>
+</div>
+</div>
+<div class="footer-col">
+<h4>Navigate</h4>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="products-underwater-robotics-accessories.html">Products</a></li>
+<li><a href="projects.html">Projects</a></li>
+<li><a href="about.html">About</a></li>
+<li><a href="contact.html">Contact</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Products</h4>
+<ul>
+<li><a href="products-underwater-robotics-accessories.html">Robotics Accessories</a></li>
+<li><a href="products-marine-propulsion.html">Marine Propulsion</a></li>
+<li><a href="products-electric-water-mobility.html">Electric Water Mobility</a></li>
+<li><a href="products-custom-marine-systems.html">Custom Marine Systems</a></li>
+</ul>
+</div>
+<div class="footer-col">
+<h4>Contact Us</h4>
+<ul class="footer-contact">
+<li><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+<circle cx="12" cy="10" r="3"></circle>
+</svg><a href="https://maps.app.goo.gl/FPwgWkcQc4uLMn7A6" target="_blank">
+<b class="footerHead">Registered Office -</b><br/>
                                 B-22, Darpan Vatika Soc., Laxmipura Road, Gorwa, Vadodara - 390023, Gujarat, INDIA</a>
-                        </li>
-                        <li><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                stroke-width="2" viewbox="0 0 24 24">
-                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                                <circle cx="12" cy="10" r="3"></circle>
-                            </svg><a href="https://maps.app.goo.gl/cX5N55SwhgvTesTt9" target="_blank">
-                                <b class="footerHead">Corporate Office -</b><br />
+</li>
+<li><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+<circle cx="12" cy="10" r="3"></circle>
+</svg><a href="https://maps.app.goo.gl/cX5N55SwhgvTesTt9" target="_blank">
+<b class="footerHead">Corporate Office -</b><br/>
                                 2-13, Kasper square, Gangotri Exotica, Laxmipura Rd, Gotri, Vadodara, Gujarat 390023</a>
-                        </li>
-                        <li><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                stroke-width="2" viewbox="0 0 24 24">
-                                <path
-                                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z">
-                                </path>
-                            </svg><a href="tel:+919998094801">+91 99980 94801</a></li>
-                        <li><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-                                stroke-width="2" viewbox="0 0 24 24">
-                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
-                                </path>
-                                <polyline points="22,6 12,13 2,6"></polyline>
-                            </svg><a href="mailto:info@eustance.com">info@eustance.com</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>© <span class="footer-year"></span> All Rights Reserved By Eustance Technology. Designed &amp;
+</li>
+<li><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z">
+</path>
+</svg><a href="tel:+919998094801">+91 99980 94801</a></li>
+<li><svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" viewbox="0 0 24 24">
+<path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z">
+</path>
+<polyline points="22,6 12,13 2,6"></polyline>
+</svg><a href="mailto:info@eustance.com">info@eustance.com</a></li>
+</ul>
+</div>
+</div>
+<div class="footer-bottom">
+<p>© <span class="footer-year"></span> All Rights Reserved By Eustance Technology. Designed &amp;
                     Developed By
-                    <a href="https://shriiitrackingsolution.in/" rel="noopener" style="color: #3288d9;"
-                        target="_blank">Shriii Tracking Solution</a>
-                </p>
-            </div>
-        </div>
-    </footer>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <script defer="defer" src="js/script.js"></script>
-    <script defer="defer" src="js/whatsapp-enquiry.js"></script>
+                    <a href="https://shriiitrackingsolution.in/" rel="noopener" style="color: #3288d9;" target="_blank">Shriii Tracking Solution</a>
+</p>
+</div>
+</div>
+</footer>
+<script defer="defer" src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script defer="defer" src="js/script.js"></script>
+<script defer="defer" src="js/whatsapp-enquiry.js"></script>
 </body>
-
 </html>
