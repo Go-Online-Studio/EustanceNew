@@ -408,8 +408,7 @@ section{
   margin-top: 100px; /* Add margin to avoid navbar overlap */
 }
 
-.hero-headline h1 {
-  font-family: 'Syne', sans-serif;
+.hero-headline h1 { 
   font-size: clamp(36px, 5vw, 76px);
   font-weight: 800;
   line-height: 1.1;
